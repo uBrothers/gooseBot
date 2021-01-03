@@ -171,7 +171,7 @@ async function start() {
                 }
               }
             }
-		 /* else if (rsi0<38 && cci0<-95) {
+            /* else if (rsi0<38 && cci0<-95) {
               if(cci1<cci2 && cci1>-100){
                 if(account[i].balance>0 && parseInt(data[1].high_price)<bollinger1 && parseInt(data[0].high_price)<bollinger0){
                   upbit.order_ask('KRW-BTC',account[i].balance);
@@ -179,7 +179,7 @@ async function start() {
                 }
               }
             } */
-		else if (parseInt(account[i].avg_buy_price)*0.995>parseInt(data[0].trade_price)) {
+            else if (parseInt(account[i].avg_buy_price)*0.995>parseInt(data[0].trade_price)) {
               if(account[i].balance>0){
                 upbit.order_ask('KRW-BTC',account[i].balance);
                 trade.save.insert({coin:"KRW-BTC", option:"taker", position:"0.5%손절", price:parseInt(data[0].trade_price)-1000, amount:account[i].balance, time:time, utc:utc});
